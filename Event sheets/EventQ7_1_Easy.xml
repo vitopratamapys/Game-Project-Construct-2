@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventQ7_1_Easy</name>
+    <events>
+        <include>Pause</include>
+        <variable constant="0" name="Number_of_Questions" sid="483521908584771" static="0" type="number">10</variable>
+        <variable constant="0" name="point_bonus" sid="433616694453096" static="0" type="number">10</variable>
+        <variable constant="0" name="timer" sid="539622991537424" static="0" type="number">10</variable>
+        <variable constant="0" name="randomNumber" sid="101958360583928" static="0" type="number">0</variable>
+        <variable constant="0" name="count" sid="327979430553252" static="0" type="number">0</variable>
+        <variable constant="0" name="score" sid="438584946319776" static="0" type="number">0</variable>
+        <variable constant="0" name="highscore" sid="621409692997103" static="0" type="number">0</variable>
+        <variable constant="0" name="CurrentAnswer" sid="620744507641969" static="0" type="text">&quot;&quot;</variable>
+        <variable constant="0" name="life" sid="849972286435487" static="0" type="number">3</variable>
+        <variable constant="0" name="lastheartpositionX" sid="424786736146129" static="0" type="number">16</variable>
+        <variable constant="0" name="lastheartpositionY" sid="256058020961426" static="0" type="number">16</variable>
+        <comment></comment>
+        <event-block sid="759493573751612">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="253934576821343" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="925638438581790" type="System">
+                    <param id="0" name="Layer">&quot;GameOver&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="1" name="Request project file" sid="982191778425817" type="AJAX">
+                    <param id="0" name="Tag">&quot;ReadQuestion&quot;</param>
+                    <param id="1" name="File">Questions7_1.txt</param>
+                </action>
+                <action id="0" name="Set text" sid="362683733319243" type="Timetxt">
+                    <param id="0" name="Text">timer</param>
+                </action>
+                <action id="0" name="Set text" sid="623644987968438" type="txScore">
+                    <param id="0" name="Text">&quot;0&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="978173666045625" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highscore&quot;</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="245186095425039" type="System" />
+                <action id="-4" name="Set layer visible" sid="109942297556145" type="System">
+                    <param id="0" name="Layer">&quot;MainMenu&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="422492230349746" type="System">
+                    <param id="0" name="Layer">&quot;Stage&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="673196079225422" type="System">
+                    <param id="0" name="Layer">&quot;Restart&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="257011749146678" type="Yuki_Anima">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="153251791547352" type="Yuki_AnimaRight">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="486477026269559" type="Yuki_AnimaWrong">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="624568710731521">
+            <conditions>
+                <condition id="9" name="On item exists" sid="418321661576065" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highscore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Get item" sid="944004114971927" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highscore&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="313417612345976">
+            <conditions>
+                <condition id="10" name="On item missing" sid="810731979485885" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highscore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="476955383120685" type="System">
+                    <param id="0" name="Variable">highscore</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="630684482919282" type="TextHighScore">
+                    <param id="0" name="Text">&quot;&quot; &amp;highscore</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="224454710398323">
+            <conditions>
+                <condition id="1" name="On item get" sid="232231765051016" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highscore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="859291032164687" type="System">
+                    <param id="0" name="Variable">highscore</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="781120576000379" type="TextHighScore">
+                    <param id="0" name="Text">&quot;&quot;&amp;highscore</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="474612531197663">
+            <conditions>
+                <condition id="0" name="On completed" sid="482927444861859" type="AJAX">
+                    <param id="0" name="Tag">&quot;ReadQuestion&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="892140571787180" type="Function">
+                    <param id="0" name="Name">&quot;LoadQuestionsFromString&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="257034507282967" type="Function">
+                    <param id="0" name="Name">&quot;GetRandomQuestion&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="838568827549149">
+            <conditions>
+                <condition id="0" name="On function" sid="293201711254654" type="Function">
+                    <param id="0" name="Name">&quot;GetRandomQuestion&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="762028247022918" type="System">
+                    <param id="0" name="Variable">randomNumber</param>
+                    <param id="1" name="Value">random(Number_of_Questions)</param>
+                </action>
+                <action id="0" name="Set text" sid="706478549765345" type="txtQuest">
+                    <param id="0" name="Text">trim(tokenat(QuestionsArray.At(randomNumber),0,&quot;;&quot;))</param>
+                </action>
+                <action id="0" name="Set text" sid="120664940295226" type="txtOptionA">
+                    <param id="0" name="Text">trim(tokenat(QuestionsArray.At(randomNumber),1,&quot;;&quot;))</param>
+                </action>
+                <action id="0" name="Set text" sid="985475657417656" type="txtOptionB">
+                    <param id="0" name="Text">trim(tokenat(QuestionsArray.At(randomNumber),2,&quot;;&quot;))</param>
+                </action>
+                <action id="0" name="Set text" sid="559201677503767" type="txtOptionC">
+                    <param id="0" name="Text">trim(tokenat(QuestionsArray.At(randomNumber),3,&quot;;&quot;))</param>
+                </action>
+                <action id="-9" name="Set value" sid="423127173188992" type="System">
+                    <param id="0" name="Variable">CurrentAnswer</param>
+                    <param id="1" name="Value">trim(tokenat(QuestionsArray.At(randomNumber),4,&quot;;&quot;))</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="323422123559408">
+            <conditions>
+                <condition id="0" name="On function" sid="445916580472885" type="Function">
+                    <param id="0" name="Name">&quot;LoadQuestionsFromString&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="155622490272632">
+                    <conditions>
+                        <condition id="-10" name="For" sid="953250203562006" type="System">
+                            <param id="0" name="Name">&quot;Each_Questions&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">Number_of_Questions-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="880021496975433" type="QuestionsArray">
+                            <param id="0" name="X">count</param>
+                            <param id="1" name="Value">trim(tokenat(AJAX.LastData,count,&quot;|&quot;))</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="450484049355850" type="System">
+                            <param id="0" name="Variable">count</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <event-block sid="368716672672110">
+            <conditions>
+                <condition id="3" name="On touched object" sid="158663117833133" type="Touch">
+                    <param id="0" name="Object">txtOptionA</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="711155435723552" type="Function">
+                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                    <param id="1" name="Parameter {n}">txtOptionA.Text</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="646619352339048">
+            <conditions>
+                <condition id="3" name="On touched object" sid="328551787314733" type="Touch">
+                    <param id="0" name="Object">txtOptionB</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="404687207046898" type="Function">
+                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                    <param id="1" name="Parameter {n}">txtOptionB.Text</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="817761838724289">
+            <conditions>
+                <condition id="3" name="On touched object" sid="617932854678637" type="Touch">
+                    <param id="0" name="Object">txtOptionC</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="139004422970153" type="Function">
+                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                    <param id="1" name="Parameter {n}">txtOptionC.Text</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="568248836499775">
+            <conditions>
+                <condition id="0" name="On function" sid="452926890560369" type="Function">
+                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="261732522161818" type="Text">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="370649226916867">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="726337386892732" type="System">
+                            <param id="0" name="Variable">CurrentAnswer</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="796236575819511" type="Function">
+                            <param id="0" name="Name">&quot;DisplayFeedback&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Wrong&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="442863518821520" type="Yuki_Anima">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="911003937484128" type="Yuki_AnimaRight">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="439446424171043" type="Yuki_AnimaWrong">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="958770428119095" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="213641549143508">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="226371590499900" type="System">
+                                    <param id="0" name="First value">life</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="528682005092411" type="System">
+                                    <param id="0" name="Variable">life</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="363780863496225">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="729082422270955" type="Heart">
+                                    <param id="0" name="Instance variable">index</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">life</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="674471753841236" type="Heart">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="884861668873592">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="227526074243527" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="936332124155954" type="Function">
+                            <param id="0" name="Name">&quot;DisplayFeedback&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Correct&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="169097061787356" type="Yuki_Anima">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="205942354272256" type="Yuki_AnimaRight">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="773930517200868" type="Yuki_AnimaWrong">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="215253705340228" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="125411332014451" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">point_bonus</param>
+                        </action>
+                        <action id="0" name="Set text" sid="153885485302418" type="txScore">
+                            <param id="0" name="Text">score</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="314110055704439">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="666531117408733" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="111846696864738" type="Function">
+                            <param id="0" name="Name">&quot;GetRandomQuestion&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="171286201992828" type="Text">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="899284687658426">
+            <conditions>
+                <condition id="0" name="On function" sid="827759729037611" type="Function">
+                    <param id="0" name="Name">&quot;DisplayFeedback&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="738361549624423" type="Text">
+                    <param id="0" name="Text">Function.Param(0)</param>
+                </action>
+                <action id="-15" name="Set visible" sid="841213693622950" type="Text">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="269208905835169" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="483772184518017" type="Text">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Call function" sid="452297500841987" type="Function">
+                    <param id="0" name="Name">&quot;GetRandomQuestion&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="386550623221457">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="553563308563489" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="755647948843657" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="647795866823702" type="Timetxt">
+                    <param id="0" name="Text">timer</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="426235352646948">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="287072954063008" type="System">
+                    <param id="0" name="First value">life</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="943969363759538" type="System">
+                    <param id="0" name="Layer">&quot;GameOver&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="847878189323404" type="Timetxt">
+                    <param id="0" name="Text">&quot;0&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="269995551719596">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="542864629507474" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="288452206812633" type="System">
+                    <param id="0" name="Layer">&quot;GameOver&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="215912574175601" type="Timetxt">
+                    <param id="0" name="Text">&quot;0&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="218023042383046" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="968331364551160">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="602268059516985" type="System">
+                            <param id="0" name="First value">score</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">highscore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="107289535044770" type="LocalStorage">
+                            <param id="0" name="Key">&quot;highscore&quot;</param>
+                            <param id="1" name="Value">score</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <event-block sid="564658012935147">
+            <conditions>
+                <condition id="-9" name="Layer is visible" sid="180190771250930" type="System">
+                    <param id="0" name="Layer">&quot;Timeup&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="171820233371243" type="txtHighScore_game">
+                    <param id="0" name="Text">highscore</param>
+                </action>
+                <action id="0" name="Set text" sid="760911507933099" type="txtScore_game">
+                    <param id="0" name="Text">score</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="167241539066656">
+            <conditions>
+                <condition id="3" name="On touched object" sid="124991419040518" type="Touch">
+                    <param id="0" name="Object">btn_rstrt</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="184232313611137" type="System">
+                    <param id="0" name="Layer">&quot;Restart&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="581563520698691">
+            <conditions>
+                <condition id="3" name="On touched object" sid="996562633505355" type="Touch">
+                    <param id="0" name="Object">btn_yes4</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="499986313471996">
+            <conditions>
+                <condition id="3" name="On touched object" sid="829499504144267" type="Touch">
+                    <param id="0" name="Object">btn_no4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="250270855768152" type="System">
+                    <param id="0" name="Layer">&quot;Restart&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="589958186006464">
+            <conditions>
+                <condition id="3" name="On touched object" sid="128110446881463" type="Touch">
+                    <param id="0" name="Object">btn_exit2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="990459955393684" type="System">
+                    <param id="0" name="Layer">&quot;MainMenu&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="868672046635853">
+            <conditions>
+                <condition id="3" name="On touched object" sid="887112024022219" type="Touch">
+                    <param id="0" name="Object">btn_yes6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="395552684347473" type="System">
+                    <param id="0" name="Layout">LoadingQ7_1_END2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="614307585546891">
+            <conditions>
+                <condition id="3" name="On touched object" sid="481501166856017" type="Touch">
+                    <param id="0" name="Object">btn_no6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="372820261703399" type="System">
+                    <param id="0" name="Layer">&quot;MainMenu&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

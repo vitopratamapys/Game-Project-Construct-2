@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventQ7_2_Easy</name>
+    <events>
+        <variable constant="0" name="Number_of_Questions2" sid="106490231303016" static="0" type="number">5</variable>
+        <variable constant="0" name="point_bonus2" sid="565049913781883" static="0" type="number">10</variable>
+        <variable constant="0" name="timer2" sid="456531273829577" static="0" type="number">20</variable>
+        <variable constant="0" name="randomNumber2" sid="125445688124685" static="0" type="number">0</variable>
+        <variable constant="0" name="count2" sid="611985263293254" static="0" type="number">0</variable>
+        <variable constant="0" name="score2" sid="173181898282897" static="0" type="number">0</variable>
+        <variable constant="0" name="CurrentAnswer2" sid="701140407886419" static="0" type="text">&quot;&quot;</variable>
+        <comment></comment>
+        <event-block sid="406222542377217">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="145755299356282" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Request project file" sid="159129442668158" type="AJAX">
+                    <param id="0" name="Tag">&quot;ReadQuestion&quot;</param>
+                    <param id="1" name="File">Questions7_2.txt</param>
+                </action>
+                <action id="0" name="Set text" sid="272878811074427" type="Timetxt">
+                    <param id="0" name="Text">timer</param>
+                </action>
+                <action id="0" name="Set text" sid="445241932347139" type="txScore">
+                    <param id="0" name="Text">&quot;0&quot;</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="705580920353792" type="System" />
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="409570378668377">
+            <conditions>
+                <condition id="0" name="On completed" sid="773053876472571" type="AJAX">
+                    <param id="0" name="Tag">&quot;ReadQuestion&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="226499915996496" type="Function">
+                    <param id="0" name="Name">&quot;LoadQuestionsFromString&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="659640259908367" type="Function">
+                    <param id="0" name="Name">&quot;GetRandomQuestion&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="676740321417835">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <event-block sid="343081056770098">
+            <conditions>
+                <condition id="0" name="On function" sid="726518908917526" type="Function">
+                    <param id="0" name="Name">&quot;GetRandomQuestion&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="938956223358031" type="System">
+                    <param id="0" name="Variable">randomNumber</param>
+                    <param id="1" name="Value">random(Number_of_Questions)</param>
+                </action>
+                <action id="0" name="Set text" sid="740425536241138" type="txtQuest">
+                    <param id="0" name="Text">trim(tokenat(QuestionsArray.At(randomNumber),0,&quot;;&quot;))</param>
+                </action>
+                <action id="0" name="Set text" sid="158337836730702" type="txtOptionA">
+                    <param id="0" name="Text">trim(tokenat(QuestionsArray.At(randomNumber),1,&quot;;&quot;))</param>
+                </action>
+                <action id="0" name="Set text" sid="507475176031355" type="txtOptionB">
+                    <param id="0" name="Text">trim(tokenat(QuestionsArray.At(randomNumber),2,&quot;;&quot;))</param>
+                </action>
+                <action id="0" name="Set text" sid="786277884529367" type="txtOptionC">
+                    <param id="0" name="Text">trim(tokenat(QuestionsArray.At(randomNumber),3,&quot;;&quot;))</param>
+                </action>
+                <action id="-9" name="Set value" sid="395275227958381" type="System">
+                    <param id="0" name="Variable">CurrentAnswer</param>
+                    <param id="1" name="Value">trim(tokenat(QuestionsArray.At(randomNumber),4,&quot;;&quot;))</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="497847424191328">
+            <conditions>
+                <condition id="0" name="On function" sid="571498727776215" type="Function">
+                    <param id="0" name="Name">&quot;LoadQuestionsFromString&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="535823767327006">
+                    <conditions>
+                        <condition id="-10" name="For" sid="204338436882928" type="System">
+                            <param id="0" name="Name">&quot;Each_Questions&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">Number_of_Questions-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="232597262088401" type="QuestionsArray">
+                            <param id="0" name="X">count</param>
+                            <param id="1" name="Value">trim(tokenat(AJAX.LastData,count,&quot;|&quot;))</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="407746192004262" type="System">
+                            <param id="0" name="Variable">count</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <event-block sid="856281864636685">
+            <conditions>
+                <condition id="3" name="On touched object" sid="330465955511157" type="Touch">
+                    <param id="0" name="Object">txtOptionA</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="211557984497877" type="Function">
+                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                    <param id="1" name="Parameter {n}">txtOptionA.Text</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="742989471486826">
+            <conditions>
+                <condition id="3" name="On touched object" sid="789167050167611" type="Touch">
+                    <param id="0" name="Object">txtOptionB</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="514242332611351" type="Function">
+                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                    <param id="1" name="Parameter {n}">txtOptionB.Text</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="219902719529708">
+            <conditions>
+                <condition id="3" name="On touched object" sid="886714236467790" type="Touch">
+                    <param id="0" name="Object">txtOptionC</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="649586203301075" type="Function">
+                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                    <param id="1" name="Parameter {n}">txtOptionC.Text</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="900070519982718">
+            <conditions>
+                <condition id="0" name="On function" sid="876707517766749" type="Function">
+                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="239977919101648" type="Text">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="793723958875742">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="871219457085069" type="System">
+                            <param id="0" name="Variable">CurrentAnswer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="380549363578364" type="Function">
+                            <param id="0" name="Name">&quot;DisplayFeedback&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Correct&quot;</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="749379725753104" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">point_bonus</param>
+                        </action>
+                        <action id="0" name="Set text" sid="480948434950393" type="txScore">
+                            <param id="0" name="Text">score</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="279442196680491">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="932724411577884" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="399421147157192" type="Function">
+                            <param id="0" name="Name">&quot;DisplayFeedback&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Wrong&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="638648657534434">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="291901383535499" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="752625669312061" type="Function">
+                            <param id="0" name="Name">&quot;GetRandomQuestion&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="942923663811548" type="Text">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="345816525274376">
+            <conditions>
+                <condition id="0" name="On function" sid="586019524426291" type="Function">
+                    <param id="0" name="Name">&quot;DisplayFeedback&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="840644608111076" type="Text">
+                    <param id="0" name="Text">Function.Param(0)</param>
+                </action>
+                <action id="-15" name="Set visible" sid="839237635408720" type="Text">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="651342245160058" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="150297076362672" type="Text">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Call function" sid="290935116430792" type="Function">
+                    <param id="0" name="Name">&quot;GetRandomQuestion&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="739404813738020">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="912082958395715" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="214992114251847" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="242169077309300" type="Timetxt">
+                    <param id="0" name="Text">timer</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="669850870609284">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="470154945534658" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set item" sid="166294019759152" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HighScore&quot;</param>
+                    <param id="1" name="Value">score</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="990863674970903" type="System">
+                    <param id="0" name="Layout">Result_Easy</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

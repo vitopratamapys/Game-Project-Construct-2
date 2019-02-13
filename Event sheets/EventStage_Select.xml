@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventStage_Select</name>
+    <events>
+        <event-block sid="532881333529616">
+            <conditions>
+                <condition id="3" name="On touched object" sid="357294388696104" type="Touch">
+                    <param id="0" name="Object">btn_71</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="371690528728288" type="System">
+                    <param id="0" name="Layer">&quot;Confirmation&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="215105330095629" type="System">
+                    <param id="0" name="Layer">&quot;Stage_Select&quot;</param>
+                    <param id="1" name="Opacity">35</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="542448003857110">
+            <conditions>
+                <condition id="-9" name="Layer is visible" sid="230228871782012" type="System">
+                    <param id="0" name="Layer">&quot;Confirmation&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="589835411485503" type="TextHighScore">
+                    <param id="0" name="Text">&quot;score&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="137264556855717">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="376015368433841" type="Touch">
+                            <param id="0" name="Object">btn_no</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="142257242753227" type="System">
+                            <param id="0" name="Layer">&quot;Confirmation&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="369178031135534" type="System">
+                            <param id="0" name="Layer">&quot;Stage_Select&quot;</param>
+                            <param id="1" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="975667426685439">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="458623337164034" type="Touch">
+                            <param id="0" name="Object">btn_yes</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="702769243553314" type="System">
+                            <param id="0" name="Layout">&quot;Dialog7_1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="428724969127210">
+            <conditions>
+                <condition id="3" name="On touched object" sid="400386320582652" type="Touch">
+                    <param id="0" name="Object">btn_72</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="145090797081631" type="System">
+                    <param id="0" name="Layer">&quot;Confirmation2&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="410357030348896" type="System">
+                    <param id="0" name="Layer">&quot;Stage_Select&quot;</param>
+                    <param id="1" name="Opacity">35</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="455959430541899">
+            <conditions>
+                <condition id="-9" name="Layer is visible" sid="915889362260507" type="System">
+                    <param id="0" name="Layer">&quot;Confirmation2&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="564459905900569">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="863617133983994" type="Touch">
+                            <param id="0" name="Object">btn_no2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="575567787017546" type="System">
+                            <param id="0" name="Layer">&quot;Confirmation2&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="645613459792817">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="961857662535152" type="Touch">
+                            <param id="0" name="Object">btn_yes2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="217925297082259" type="System">
+                            <param id="0" name="Layout">LoadingQ7_2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

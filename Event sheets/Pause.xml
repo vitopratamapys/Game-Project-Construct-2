@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Pause</name>
+    <events>
+        <variable constant="0" name="Paused" sid="800399746950783" static="0" type="number">0</variable>
+        <event-block sid="461012019977740">
+            <conditions>
+                <condition id="3" name="On touched object" sid="492903496801978" type="Touch">
+                    <param id="0" name="Object">PauseButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="685580524624271" type="System">
+                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="172049838731559" type="System">
+                    <param id="0" name="Time scale">1-timescale</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="725631335510102">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="728864812589746" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="769564373559246" type="PauseTest">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="347823398910508" type="btn_no">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="883474355224871" type="btn_yes">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="422126959270508" type="System">
+                    <param id="0" name="Layer">&quot;GameField&quot;</param>
+                    <param id="1" name="Opacity">35</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="321669143426887">
+            <conditions>
+                <condition id="3" name="On touched object" sid="299614495639156" type="Touch">
+                    <param id="0" name="Object">btn_yes</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="735172870951969" type="System">
+                    <param id="0" name="Time scale">1+timescale</param>
+                </action>
+                <action id="-15" name="Set visible" sid="388699397266546" type="PauseTest">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="282249134464742" type="btn_yes">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="710078316826690" type="btn_no">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="660653539029004" type="System">
+                    <param id="0" name="Layer">&quot;GameField&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

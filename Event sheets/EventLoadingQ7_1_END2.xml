@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventLoadingQ7_1_END2</name>
+    <events>
+        <event-block sid="312892040131293">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="446942394342679" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="847112788472349" type="meter3">
+                    <param id="0" name="Width">meter3.Width+2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="724086580047180">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="494723461286569" type="meter3">
+                    <param id="0" name="Object">loading_code3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="957283320299975" type="System">
+                    <param id="0" name="Layout">Stage_Select</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

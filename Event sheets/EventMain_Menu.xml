@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventMain_Menu</name>
+    <events>
+        <event-block sid="232116541487056">
+            <conditions>
+                <condition id="3" name="On touched object" sid="522387422499021" type="Touch">
+                    <param id="0" name="Object">btn_start</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="838704653696790" type="System">
+                    <param id="0" name="Layout">Difficulty</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="462132553945121">
+            <conditions>
+                <condition id="3" name="On touched object" sid="768784678938976" type="Touch">
+                    <param id="0" name="Object">btn_options</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="706234238356445">
+            <conditions>
+                <condition id="3" name="On touched object" sid="270728668611227" type="Touch">
+                    <param id="0" name="Object">btn_exit</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventEnding7_2</name>
+    <events>
+        <variable constant="0" name="de77" sid="669674211523382" static="0" type="number">0</variable>
+        <variable constant="0" name="skip77" sid="240146422511032" static="0" type="number">0</variable>
+        <event-block sid="128513211155003">
+            <conditions>
+                <condition id="0" name="On clicked" sid="516427854575305" type="Skip_76" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="167681884467474" type="System">
+                    <param id="0" name="Layout">LoadingQ7_1_END2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="108655268165513">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="811388429949300" type="System">
+                    <param id="0" name="Interval (seconds)">2.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="868516155503559" type="System">
+                    <param id="0" name="Seconds">2.5</param>
+                </action>
+                <action id="-9" name="Set value" sid="560758216022107" type="System">
+                    <param id="0" name="Variable">skip77</param>
+                    <param id="1" name="Value">skip77+1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="135591969716469">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="112088974384089" type="System">
+                    <param id="0" name="Variable">skip77</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="233840845610590" type="TextName_76">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="333843829027269" type="TextDialogue_76">
+                    <param id="0" name="Text">&quot;Even though the introduction was just only the beginning of the black-white view mystery. It wasn&apos;t solved in mystery. Yuki realized about it and determined to solve this mystery.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="787126394417826">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="651586458265519" type="System">
+                    <param id="0" name="Variable">skip77</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="226360117950389" type="TextName_76">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="870689356350752" type="TextDialogue_76">
+                    <param id="0" name="Text">&quot;Before she started the investigation, Yuki started to asked few things to the old bear.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="704373121003485">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="625125080268581" type="System">
+                    <param id="0" name="Variable">skip77</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="351233074445722" type="System">
+                    <param id="0" name="Layout">Ending7_3</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

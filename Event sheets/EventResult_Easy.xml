@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventResult_Easy</name>
+    <events>
+        <event-block sid="287350977600216">
+            <conditions>
+                <condition id="3" name="On touched object" sid="697043798921097" type="Touch">
+                    <param id="0" name="Object">Restart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="715342848277865" type="System">
+                    <param id="0" name="Layout">Q7_1_Easy</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="142121365836414">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="435112355790303" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="893933052242617" type="txtHighScore">
+                    <param id="0" name="Text">score</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventEnding7_1</name>
+    <events>
+        <variable constant="0" name="de76" sid="901255879201670" static="0" type="number">0</variable>
+        <variable constant="0" name="skip76" sid="593192654193334" static="0" type="number">0</variable>
+        <event-block sid="507722524096502">
+            <conditions>
+                <condition id="0" name="On clicked" sid="593481558159185" type="Skip_76" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="303757924455155" type="System">
+                    <param id="0" name="Layout">LoadingQ7_1_END2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="569542811452670">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="691569696574414" type="System">
+                    <param id="0" name="Interval (seconds)">2.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="631489062044966" type="System">
+                    <param id="0" name="Seconds">2.5</param>
+                </action>
+                <action id="-9" name="Set value" sid="800572313912523" type="System">
+                    <param id="0" name="Variable">skip76</param>
+                    <param id="1" name="Value">skip76+1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="813394491658566">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="531624615916167" type="System">
+                    <param id="0" name="Variable">skip76</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="493177978305722" type="TextName_76">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="935694296623720" type="TextDialogue_76">
+                    <param id="0" name="Text">&quot;After making through very long process, finally Yuki was success to introduce herself to the bears. One by one, the bear was getting closer to Yuki&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="903327596162406">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="910026752829057" type="System">
+                    <param id="0" name="Variable">skip76</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="845162735090147" type="TextName_76">
+                    <param id="0" name="Text">&quot;Old Bear&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="419062148334396" type="TextDialogue_76">
+                    <param id="0" name="Text">&quot;Nice to meet you, Miss Yuki!&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="815522263017306">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="520823002233757" type="System">
+                    <param id="0" name="Variable">skip76</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="530270810403356" type="TextName_76">
+                    <param id="0" name="Text">&quot;Yuki&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="761348538591809" type="TextDialogue_76">
+                    <param id="0" name="Text">&quot;Nice to meet you, Sir!&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="611555881576922">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="143620045922349" type="System">
+                    <param id="0" name="Variable">skip76</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="181040890065409" type="System">
+                    <param id="0" name="Layout">Ending7_2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

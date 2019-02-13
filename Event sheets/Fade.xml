@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fade</name>
+    <events>
+        <variable constant="0" name="nextLayoutName" sid="925199004938017" static="0" type="text">Main_Menu</variable>
+        <event-group description="" sid="811643643700933" title="FADE: START LAYOUT">
+            <sub-events>
+                <event-block sid="363124538493642">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="695355838297199" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="712385665195452" type="System">
+                            <param id="0" name="Layer">&quot;Fade&quot;</param>
+                            <param id="1" name="Opacity">100</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="876354458767198" type="System">
+                            <param id="0" name="Group name">&quot;Fade: FADE OUT&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="281553527418601" type="System">
+                            <param id="0" name="Group name">&quot;Fade: FADE IN&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="260532434078372" title="Fade: FADE IN">
+            <sub-events>
+                <event-block sid="848602646031895">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="951582075062987" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="703721311557078" type="System">
+                            <param id="0" name="Layer">&quot;Fade&quot;</param>
+                            <param id="1" name="Opacity">LayerOpacity(&quot;Fade&quot;)-(dt*60)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="543140815605060" title="Fade: FADE OUT">
+            <sub-events>
+                <event-block sid="365164887849334">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="605612301235349" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="245478580667208" type="System">
+                            <param id="0" name="Layer">&quot;Fade&quot;</param>
+                            <param id="1" name="Opacity">LayerOpacity(&quot;Fade&quot;)+(dt*60)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="876214271587188">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="980938685770022" type="System">
+                            <param id="0" name="First value">LayerOpacity(&quot;Fade&quot;)</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">98</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="181424046832154" type="System">
+                            <param id="0" name="Layout">nextLayoutName</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="149857864510344" title="Fade: FUNCTION &gt; NEXT LAYOUT">
+            <sub-events>
+                <event-block sid="589487811785910">
+                    <conditions>
+                        <condition id="0" name="On function" sid="506277111749021" type="Function">
+                            <param id="0" name="Name">&quot;nextLayout&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="265935497434359" type="System">
+                            <param id="0" name="Layer">nextLayoutName</param>
+                            <param id="1" name="Opacity">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="859136377363874">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="114485165936460" type="System">
+                                    <param id="0" name="First value">LayerOpacity(&quot;Fade&quot;)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="475016149189735" type="System">
+                                    <param id="0" name="Group name">&quot;Fade: FADE IN&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="314300193634169" type="System">
+                                    <param id="0" name="Group name">&quot;Fade: FADE OUT&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
