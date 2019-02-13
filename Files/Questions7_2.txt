@@ -1,0 +1,106 @@
+Wesley : Hi Joe! ________?
+Joe : Sure. The library is beside the teacher room. 
+Wesley : I see. Thanks Joe!;
+How are you today?;
+Can you borrow me your book?;
+Can you tell me where the library is?;
+Can you tell me where the library is?;
+|
+Yuki : I’m looking for a Chemistry book, but I cannot find it. Can you tell me?
+Max : Sure. It’s behind the Japanese language bookshelf.
+Yuki : I get it. Thanks Max!
+Where would you probably hear the dialog?;
+Teacher’s office;
+Library; 
+Laboratory;
+Library;
+|
+Mr. Carl : Does anyone know where is the marker?
+Kevin : _________(?)
+Mr. Carl : Oh! Here it is! Thank you Kevin.;
+It’s inside the desk, sir;
+I need to go, sir;
+I’m sorry sir;
+It's inside the desk, sir;
+|
+Look at the picture below!
+[Class VII A]             [Class VII B]              [Class VII C]
+
+[Chemistry Laboratory]  [Computer Laboratory]    [Library]
+Where is the Laboratory Chemistry?;
+Beside the Class VII B;
+In front of Class VII A;
+Between the Computer Room and Class VII B;
+In front of Class VII A;
+|
+John : I’m hungry, David. 
+David : Well then, let’s go to the _________? There’s a delicious food and snacks there.;
+Class;
+Laboratory;
+Cafetaria;
+Cafetaria;
+|
+Ellen has an art class tomorrow. Which one of tools that she doesn’t need to bring to the art class?;
+an erase;
+a blender;
+a ruler;
+a blender;
+|
+Read the sign below!
+“PLEASE SHOW YOUR BOARDING PASS BEFORE ENTER THE PLANE”
+Where can you find this sign?;
+A Railway Station;
+An Airport;
+A movie theatre;
+An Airport;
+|
+Which statement is used to ask for information?;
+I’ll meet you there.;
+Mr. Anton is in the office room.;
+Excuse me! Can you tell me where’s Mr. Anton is?;
+Excuse me! Can you tell me where’s Mr. Anton is?; 
+|
+Derek : Mom, do you know where’s my brother?
+Derek’s Mom : He’s on the his bedroom. Shall I call him for you?
+Derek : No, thank you mom. I’ll see him there.
+The word “there” refers to _________?;
+Derek’s brother bedroom;
+Kitchen;
+Derek’s bedroom;
+Derek’s brother bedroom;
+|
+Because It looks like the weather is very cloudy, Yuki puts ____umbrella.;
+an;
+a;
+the;
+an;
+|
+Danny : Carl, can you help me to get ____ sheet of paper please? I want to make a sketch.
+Carl : Sure!;
+an;
+a;
+the;
+a;
+|
+[ONE DAY ON THE SCHOOL GATE]
+Eric : Excuse me, sir! Do you know the place where I can park my bicycle?;
+Security : Sure. You can park at the ______beside the security room.;
+bicycle shed;
+classroom
+laboratory
+bicycle shed;
+|
+Henry : Dad! Where do you park the car?
+Henry’s Dad : I park a car _______?;
+in the kitchen room;
+in the bedroom;
+in the garage;
+in the garage;
+|
+I have a friend from America. _____name is Louis. 
+He is 13 years old. Louis and I live ___ the same street. 
+But study at different school.;
+Her, on;
+His, on; 
+His, in;
+His, on;

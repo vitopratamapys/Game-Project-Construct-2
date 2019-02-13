@@ -1,0 +1,75 @@
+Yuki: Hello, David!
+David: Hello, Yuki!
+Yuki: How are you today?
+David: (?);
+I need to go home;
+I'm fine, thanks!;
+Hello again!;
+I'm fine, thanks!;
+|
+Yuki: (?)
+Joseph: Good morning,Yuki!;
+How are you today?;
+See you later, Joseph!;
+Good Morning, Joseph!;
+Good Morning, Joseph!;
+|
+Yuki : It's already 5 PM, I'm sorry, I think I have to go now!
+Nikki : Alright. Take care of yourself.;
+Yuki : (?) 
+Hello again!;
+How are you?;
+You too!;
+You too!;
+|
+Yuki : So, how are things going?
+Lewis : (?);
+Very well, thanks!;
+How are you;
+How is life;
+Very well, thanks!;
+|
+Gary : How are you today, Yuki?
+Yuki : (?), I have to go to the doctor.
+Gary : I see. I’m sorry to hear that. Get well soon, Yuki!;
+I'm not feeling well today;
+I'm fine. Thanks!;
+So long!;
+So long!;
+|
+Yunita : Excuse me, what time is it?
+Yuki : (?);
+On August!;
+It's 4 o'clock!;
+On Wednesday;
+It's 4 o'clock;
+|
+Derek : (?)
+Yuki : It starts on December 3rd.;
+What day is it?;
+What time is it?;
+When is the movie start?;
+When is the movie start?;
+|
+Eric : What time do you usually clean the room?
+Yuki : (?)
+[CLUE: JOHNSTON USUALLY CLEAN THE ROOM AT AT 6:15];
+A quarter past six;
+A quarter to six;
+A half past six;
+A quarter past six; 
+|
+Yuki : When does the Social Class begin?
+Joey : (?)
+[CLUE: THE CLASS BEGIN AT 9:05] [SHOW A SCHEDULE];
+Five minutes to nine;
+Five minutes past nine;
+A quarter past nine;
+FIve minutes past nine;
+|
+Yuki : When is the soccer match?
+Ernest : (?);
+I’m not feeling well today;
+On Cardiff City;
+On June 2nd, 2017;
+On June 2nd, 2017;
